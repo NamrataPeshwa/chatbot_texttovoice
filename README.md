@@ -36,3 +36,34 @@ This project combines the power of **ReactJS**, **Python Flask**, **Ollama Phi-3
 ```bash
 git clone https://github.com/yourusername/voice-chatbot.git
 cd chatbot_texttovoice
+```
+### 2. Backend Setup
+
+```bash
+cd backend
+```
+#### Create a virtual environment
+```bash
+python -m venv chatbot
+```
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+###3. Create a .env file in the backend folder with the following content:
+```bash
+ELEVEN_API_KEY=your_elevenlabs_api_key
+VOICE_ID=21m00Tcm4TlvDq8ikWAM
+```
+
+Start the Flask backend server:
+
+python app.py
+
+###3. Frontend Setup
+```bash
+cd ../frontend
+npm install
+npm start
+```
