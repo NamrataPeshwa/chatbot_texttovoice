@@ -1,0 +1,59 @@
+.App {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.chatbox {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fefefe;
+  border-radius: 8px;
+}
+
+.message {
+  margin: 0.5rem 0;
+  text-align: left;
+}
+
+.message.user {
+  color: #2a4dff;
+}
+
+.message.bot {
+  color: #28a745;
+}
+
+.input-area {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+.audio {
+  margin-top: 1rem;
+}
