@@ -1,4 +1,0 @@
-flask
-langchain
-langchain_ollama
-requests

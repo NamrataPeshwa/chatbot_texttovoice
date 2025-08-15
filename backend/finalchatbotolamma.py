@@ -5,11 +5,13 @@ from langchain.prompts import ChatPromptTemplate
 import requests
 import base64
 import tempfile
+from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
 CORS(app)
 
+load_dotenv()
 template = '''
 Answer the question below.
 Here is the conversation history:
@@ -23,8 +25,8 @@ model = OllamaLLM(model="phi3:mini")
 prompt = ChatPromptTemplate.from_template(template)
 chain = prompt | model
 
-ELEVEN_API_KEY = "sk_df712db7ed007f29110045f471293ddb9d98d21c475530a4"
-VOICE_ID = "21m00Tcm4TlvDq8ikWAM"
+ELEVEN_API_KEY = os.getenv("ELEVEN_API_KEY")
+VOICE_ID = os.getenv("VOICE_ID")
 
 context = ""
 
