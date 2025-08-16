@@ -4,8 +4,10 @@ import requests
 import base64
 import tempfile
 import os
+from dotenv import load_dotenv
 from playsound import playsound
 
+load_dotenv()
 template = '''
 Answer the question below.
 Here is the conversation history:
@@ -19,8 +21,8 @@ model = OllamaLLM(model="phi3:mini")
 prompt = ChatPromptTemplate.from_template(template)
 chain = prompt | model
 
-ELEVEN_API_KEY = "sk_3147080cfc59c9f03a25c5b31a6ab16e94ad794b6df79245"
-VOICE_ID = "21m00Tcm4TlvDq8ikWAM"
+ELEVEN_API_KEY = os.getenv("ELEVEN_API_KEY")
+VOICE_ID = os.getenv("VOICE_ID")
 
 def text_to_speech(text):
     eleven_url = f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}"
